@@ -56,15 +56,17 @@ class App extends React.Component {
          if(this.state.startValue >= 0){
              let newMaxValue = e.currentTarget.value;
              if((parseInt(newMaxValue)<0)||(parseInt(newMaxValue))<=(this.state.startValue)) {
-                 this.setState({message: "ERROR"});
-                 this.setState({errorFirstInput: true});
-                 this.setState({messageError: 'messageError'});
-                 this.setState({filterValue: ''});
+                 this.setState({
+                     message: "ERROR",
+                     errorFirstInput: true,
+                     messageError: 'messageError',
+                     filterValue: ''});
              } else {
-                 this.setState({filterValue: 'ok'});
-                 this.setState({message: 'Click "Ok"'});
-                 this.setState({errorFirstInput: false});
-                 this.setState({messageError: ''});
+                 this.setState({
+                     filterValue: 'ok',
+                     message: 'Click "Ok"',
+                     errorFirstInput: false,
+                     messageError: ''});
                  if(newMaxValue>this.state.startValue){
                      this.setState({errorSecondInput: false})
                  }
@@ -78,15 +80,17 @@ class App extends React.Component {
          if (this.state.maxValue > 0) {
              let newStartValue = e.currentTarget.value;
              if((parseInt(newStartValue)<0) || (parseInt(newStartValue)>=this.state.maxValue)) {
-                 this.setState({message: "ERROR"});
-                 this.setState({errorSecondInput: true});
-                 this.setState({messageError: 'messageError'});
-                 this.setState({filterValue: ''});
+                 this.setState({
+                     message: "ERROR",
+                     errorSecondInput: true,
+                     messageError: 'messageError',
+                     filterValue: ''});
              } else {
-                 this.setState({filterValue: 'ok'});
-                 this.setState({message: 'Click "Ok"'});
-                 this.setState({errorSecondInput: false});
-                 this.setState({messageError: ''});
+                 this.setState({
+                     filterValue: 'ok',
+                     message: 'Click "Ok"',
+                     errorSecondInput: false,
+                     messageError: ''});
                  if(newStartValue<this.state.maxValue){
                      this.setState({errorFirstInput: false});
                  }
