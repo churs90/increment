@@ -1,0 +1,21 @@
+
+.settings div:last-child {
+  margin-top: 35px;
+}
+
+.settings input {
+  margin-left: 75px;
+}
+
+.settings div:first-child input {
+  margin-left: 77px;
+}
+
+.errorInput {
+  border: 2px solid red;
+  color: red;
+}
+
+
+
+
