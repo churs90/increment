@@ -8,7 +8,7 @@ class App extends React.Component {
          maxValue: 5,
          startValue: 0,
          incValue: 0,
-         filterValue: 'all',
+         filterButtonValue: 'all',
          displayNone: 'displayNone',
          displayBlock: 'displayBlock',
          message: 'Click "Ok"',
@@ -27,17 +27,17 @@ class App extends React.Component {
      };
 
      onclickOk = () => {
-         if ((this.state.filterValue === 'ok')||(this.state.message !== 'ERROR')) {
+         if ((this.state.filterButtonValue === 'ok')||(this.state.message !== 'ERROR')) {
              this.setState({
                  displayBlock: 'displayBlock',
                  displayNone: 'displayNone',
-                 filterValue: 'all',
+                 filterButtonValue: 'all',
                  incValue: this.state.startValue});
          }
      };
 
      resetClick = () => {
-         if ((this.state.message !== 'ERROR') || (this.state.filterValue === 'all')) {
+         if ((this.state.message !== 'ERROR') || (this.state.filterButtonValue === 'all')) {
              this.setState({incValue: this.state.startValue});
          }
      };
@@ -46,9 +46,10 @@ class App extends React.Component {
          if(this.state.message==='ERROR'){
              this.setState({filterValue: ''});
          }else {
-        this.setState({filterValue: 'ok'});
-         this.setState({displayBlock: 'displayNone'});
-         this.setState({displayNone: 'displayBlock'})
+        this.setState({
+            filterButtonValue: 'ok',
+            displayBlock: 'displayNone',
+            displayNone: 'displayBlock'});
          }
      };
 
@@ -60,10 +61,10 @@ class App extends React.Component {
                      message: "ERROR",
                      errorFirstInput: true,
                      messageError: 'messageError',
-                     filterValue: ''});
+                     filterButtonValue: ''});
              } else {
                  this.setState({
-                     filterValue: 'ok',
+                     filterButtonValue: 'ok',
                      message: 'Click "Ok"',
                      errorFirstInput: false,
                      messageError: ''});
@@ -84,10 +85,10 @@ class App extends React.Component {
                      message: "ERROR",
                      errorSecondInput: true,
                      messageError: 'messageError',
-                     filterValue: ''});
+                     filterButtonValue: ''});
              } else {
                  this.setState({
-                     filterValue: 'ok',
+                     filterButtonValue: 'ok',
                      message: 'Click "Ok"',
                      errorSecondInput: false,
                      messageError: ''});

@@ -6,7 +6,7 @@ import Button from "../FirstWindow/Button";
 
 const SecondWindow = (props) => {
     let btnsTitle = ['inc','reset'];
-    let classForButton = props.state.filterValue === "all" ? "filter-active" : "";
+    let classForButton = props.state.filterButtonValue === "all" ? "filter-active" : "";
         return (
             <div className={generalStyles.window}>
                 <NumberField state={props.state}/>

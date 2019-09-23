@@ -5,7 +5,7 @@ import classes from './FirstWindow.module.css'
 import generalStyles from '../../generalStyles.module.css'
 
 const FirstWindow = (props) => {
-        let classForButton = props.state.filterValue === "ok" ? "filter-active" : "";
+        let classForButton = props.state.filterButtonValue === "ok" ? "filter-active" : "";
         let btnsTitle = ['ok'];
         return (
                 <div className={generalStyles.window}>
